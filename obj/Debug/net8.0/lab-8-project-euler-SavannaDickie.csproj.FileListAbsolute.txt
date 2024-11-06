@@ -1,0 +1,15 @@
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/bin/Debug/net8.0/lab-8-project-euler-SavannaDickie
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/bin/Debug/net8.0/lab-8-project-euler-SavannaDickie.deps.json
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/bin/Debug/net8.0/lab-8-project-euler-SavannaDickie.runtimeconfig.json
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/bin/Debug/net8.0/lab-8-project-euler-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/bin/Debug/net8.0/lab-8-project-euler-SavannaDickie.pdb
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.GeneratedMSBuildEditorConfig.editorconfig
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.AssemblyInfoInputs.cache
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.AssemblyInfo.cs
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.csproj.CoreCompileInputs.cache
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.sourcelink.json
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/refint/lab-8-project-euler-SavannaDickie.dll
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.pdb
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/lab-8-project-euler-SavannaDickie.genruntimeconfig.cache
+/Users/personal3/Downloads/code/mycodedir/lab-8-project-euler-SavannaDickie/obj/Debug/net8.0/ref/lab-8-project-euler-SavannaDickie.dll
