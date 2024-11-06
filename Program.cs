@@ -6,11 +6,23 @@ Console.Clear();
 Console.WriteLine("\nThis is a program that will demostrate the solution to two Project Euler problems");
 Console.WriteLine("\n=== Projet Euler Menu ===\n\n1. Even Fibonacci Numbers\n2. Smallest Multiple\n3. Largest Prime Factor\n4. Summation of Primes");
 Console.Write("\nEnter the number of your selection ");
-//int selection = int.Parse(Console.ReadLine());
-//switch (selection)
-//{
-   // case 1: EvenFibonacciNumbers(); break;
-//}
+int selection = int.Parse(Console.ReadLine());
+switch (selection)
+{
+    case 1: EvenFibonacciNumbers(1,2); break;
+}
+
+static int EvenFibonacciNumbers(int x, int y) 
+{
+   
+    if (y > 4000000) return 0; 
+    
+    int sum = (y % 2 == 0) ? y : 0; 
+    return sum + EvenFibonacciNumbers(y, x + y); 
+}
+Console.WriteLine($"The of Even Fibonacci Numbers: {EvenFibonacciNumbers(1,2)}");
+
+
 
 
 
@@ -38,7 +50,7 @@ Console.WriteLine(fibonacci); */
 //exceed four milling, find the sum of the even valued terms.
 //int sum = EvenFibonacciNumbers(1, 2); // calling my method
 
-static int EvenFibonacciNumbers(int x, int y) // making my method
+/*static int EvenFibonacciNumbers(int x, int y) // making my method
 {
    
     if (y > 4000000) return 0; //BASE CASE two is not greater and will keep adding until it reachins 4000000
@@ -49,4 +61,4 @@ static int EvenFibonacciNumbers(int x, int y) // making my method
 }
 //int n = 10;
 int fibonacci = EvenFibonacciNumbers(1,2);
-Console.WriteLine(fibonacci);
+Console.WriteLine(fibonacci); */
