@@ -2,23 +2,35 @@
 //Savanna Dickie
 // 11/05/2024
 // Lab 8: Project Euler
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
 Console.Clear();
 Console.WriteLine("\nThis is a program that will demostrate the solution to two Project Euler problems");
-Console.WriteLine("\n=== Projet Euler Menu ===\n\n1. Even Fibonacci Numbers\n2. Smallest Multiple\n3. Largest Prime Factor\n4. Summation of Primes");
+Console.WriteLine("\n=== Projet Euler Menu ===\n\n1. Even Fibonacci Numbers\n2. Smallest Multiple\n3. Sum Square Difference\n4. Summation of Primes");
 Console.Write("\nEnter the number of your selection ");
 int selection = int.Parse(Console.ReadLine());
 switch (selection)
 {
     case 1: 
         EvenFibonacciNumbers(1,2); 
-        Console.WriteLine($"The of Even Fibonacci Numbers: {EvenFibonacciNumbers(1,2)}");
+        Console.WriteLine($"The sum of Even Fibonacci Numbers: {EvenFibonacciNumbers(1,2)}");
         break;
     case 2: 
         SmallestMultiple(20); 
         Console.WriteLine($"The smallest number divisible by all numbers from 1 to 20 is {SmallestMultiple(20)}"); 
         //Console.WriteLine($"LCM({n}, {leastCommonMultiple}) = {SmallestMultiple(20)}")
+        break;
+    case 3:
+        SumSquareDifference(100);
+        Console.WriteLine($"The sum of the squares of the first ten natural numbers is: {(10 * (10 + 1) * (2*10+1)) /6}");
+        Console.WriteLine($"\nThe sqaure of the sum of the first ten natural numbers is: {((10 * (10 + 1)) / 2) * ((10* (10+1))/2)}");
+        Console.WriteLine($"\nHence the difference between the sum of the squares of the \nfirst ten natural numbers and the square of the sum is: {SumSquareDifference(10)}");
+        Console.WriteLine($"\nThe difference between the sum of the squares of the first \none hundred natural numbers and the square of the sum is: {SumSquareDifference(100)}\n");
+        break;
+    case 4: 
+        SumOfPrimes(2000000);
+        Console.WriteLine(SumOfPrimes(2000000));
         break;
     
 }
@@ -47,9 +59,58 @@ static long SmallestMultiple(long n)
      
 }
 
+// SUM SQUARE DIFFERENCE
+static int SumSquareDifference(int n)
+{
+    int sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
+    int sum = (n * ( n + 1)) / 2;
+    int squareOfSum = sum * sum;
+    return squareOfSum - sumOfSquares;
+}
+//INTERATIVE SUM OF PRIMES
+static long SumOfPrimes(long n)
+{
+    long sum = 0;
+    for (long number = 2; number < n; number++)
+    {
+        bool checkingForPrime = true;
+        for(long i = 2; i * i <= number; i ++) //(n <= 2) return 0;
+        {
+            if (number % i == 0)
+            {
+                checkingForPrime = false;
+                break; 
+            }
+        }
+        if (checkingForPrime)
+        {
+            sum += number;
+        }
+    }
+    return sum;
+    
+}
 
+// Summation of primes - THIS WORKS FOR 10 but not 2000000
+/*static long SumOfPrimes(long n)
+{
+    //if (n > 10) return 1; 
+    //int sum = (n % n == 1) ? n : 1;
+    //return n++;
+    if (n <= 2) return 0;
+    bool checkingForPrime = true;
+    for (long i = 2; i * i <= n - 1; i++)
+    {
+        if ((n - 1) % i == 0) //return false 
+        {
+            checkingForPrime = false;
+            break;
+        }
 
-
+    }
+    if (checkingForPrime) return (n - 1) + SumOfPrimes(n - 1);
+    else return SumOfPrimes (n - 1);
+} */
 
 
 //FIBONACCI SEQUENCE FROM HOMEWORK
