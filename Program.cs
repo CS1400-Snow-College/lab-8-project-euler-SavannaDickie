@@ -2,6 +2,8 @@
 //Savanna Dickie
 // 11/05/2024
 // Lab 8: Project Euler
+using System.Security.Cryptography.X509Certificates;
+
 Console.Clear();
 Console.WriteLine("\nThis is a program that will demostrate the solution to two Project Euler problems");
 Console.WriteLine("\n=== Projet Euler Menu ===\n\n1. Even Fibonacci Numbers\n2. Smallest Multiple\n3. Largest Prime Factor\n4. Summation of Primes");
@@ -9,7 +11,16 @@ Console.Write("\nEnter the number of your selection ");
 int selection = int.Parse(Console.ReadLine());
 switch (selection)
 {
-    case 1: EvenFibonacciNumbers(1,2); break;
+    case 1: 
+        EvenFibonacciNumbers(1,2); 
+        Console.WriteLine($"The of Even Fibonacci Numbers: {EvenFibonacciNumbers(1,2)}");
+        break;
+    case 2: 
+        SmallestMultiple(20); 
+        Console.WriteLine($"The smallest number divisible by all numbers from 1 to 20 is {SmallestMultiple(20)}"); 
+        //Console.WriteLine($"LCM({n}, {leastCommonMultiple}) = {SmallestMultiple(20)}")
+        break;
+    
 }
 
 static int EvenFibonacciNumbers(int x, int y) 
@@ -20,8 +31,21 @@ static int EvenFibonacciNumbers(int x, int y)
     int sum = (y % 2 == 0) ? y : 0; 
     return sum + EvenFibonacciNumbers(y, x + y); 
 }
-Console.WriteLine($"The of Even Fibonacci Numbers: {EvenFibonacciNumbers(1,2)}");
 
+static long SmallestMultiple(long n)
+{
+    long GreatestCommonDivisor(long x, long y) => y == 0 ? x : GreatestCommonDivisor(y, x % y);
+    if (n == 1)
+    return 1;
+
+    long leastCommonMultiple = SmallestMultiple(n-1);
+    
+    long result = (n * leastCommonMultiple) / GreatestCommonDivisor(n, leastCommonMultiple);
+    
+     //Console.WriteLine($"LeastCommonMultiple({n}, {leastCommonMultiple}) = {result}");
+     return result;
+     
+}
 
 
 
@@ -62,3 +86,66 @@ Console.WriteLine(fibonacci); */
 //int n = 10;
 int fibonacci = EvenFibonacciNumbers(1,2);
 Console.WriteLine(fibonacci); */
+
+//SMALLEST MULTIPLE
+/*
+static int SmallestMultiple(int n)
+{
+    int GreatestCommonDivisor(int x, int y) => y == 0 ? x : GreatestCommonDivisor(y, x % y);
+    if (n == 1)
+    return 1;
+
+    int LeastCommonMultiple = SmallestMultiple(n-1);
+    //return ((n * LeastCommonMultiple) / GreatestCommonDivider(n, LeastCommonMultiple));
+    //Console.WriteLine($"LCM({n}, {LeastCommonMultiple}) = {SmallestMultiple(20)}");
+    int result = (n * LeastCommonMultiple) / GreatestCommonDivisor(n, LeastCommonMultiple);
+    //return (n * LeastCommonMultiple) / GreatestCommonDivisor(n, LeastCommonMultiple);
+     Console.WriteLine($"LeastCommonMultiple({n}, {LeastCommonMultiple}) = {result}");
+     return result;
+}
+Console.WriteLine($"The smallest number divisible by all numbers from 1 to 20 is {SmallestMultiple(20)}"); */
+//debug
+ //Console.WriteLine($"LCM({n}, {LeastCommonMultiple}) = {SmallestMultiple(20)}");
+ //debug 
+ /*
+ LeastCommonMultiple(2, 1) = 2 good
+LeastCommonMultiple(3, 2) = 6 good
+LeastCommonMultiple(4, 6) = 12 good
+LeastCommonMultiple(5, 12) = 60 good
+LeastCommonMultiple(6, 60) = 60 good
+LeastCommonMultiple(7, 60) = 420 good
+LeastCommonMultiple(8, 420) = 840 good
+LeastCommonMultiple(9, 840) = 2520 good
+LeastCommonMultiple(10, 2520) = 2520 good
+LeastCommonMultiple(11, 2520) = 27720 good
+LeastCommonMultiple(12, 27720) = 27720 good
+LeastCommonMultiple(13, 27720) = 360360 good
+LeastCommonMultiple(14, 360360) = 360360 good
+LeastCommonMultiple(15, 360360) = 360360 good
+LeastCommonMultiple(16, 360360) = 720720 good
+LeastCommonMultiple(17, 720720) = 12252240 good
+LeastCommonMultiple(18, 12252240) = 12252240 good
+LeastCommonMultiple(19, 12252240) = 232792560 good
+LeastCommonMultiple(20, 232792560) = 18044195 */ //not good
+
+//AFTER DEBUG CHANGING TO LONG INSTEAD OF INT
+/*
+LeastCommonMultiple(2, 1) = 2
+LeastCommonMultiple(3, 2) = 6
+LeastCommonMultiple(4, 6) = 12
+LeastCommonMultiple(5, 12) = 60
+LeastCommonMultiple(6, 60) = 60
+LeastCommonMultiple(7, 60) = 420
+LeastCommonMultiple(8, 420) = 840
+LeastCommonMultiple(9, 840) = 2520
+LeastCommonMultiple(10, 2520) = 2520
+LeastCommonMultiple(11, 2520) = 27720
+LeastCommonMultiple(12, 27720) = 27720
+LeastCommonMultiple(13, 27720) = 360360
+LeastCommonMultiple(14, 360360) = 360360
+LeastCommonMultiple(15, 360360) = 360360
+LeastCommonMultiple(16, 360360) = 720720
+LeastCommonMultiple(17, 720720) = 12252240
+LeastCommonMultiple(18, 12252240) = 12252240
+LeastCommonMultiple(19, 12252240) = 232792560
+LeastCommonMultiple(20, 232792560) = 232792560 */
